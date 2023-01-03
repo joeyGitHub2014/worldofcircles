@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "mobile-web-app-capable" content="yes" >
+<meta name = "viewport" content="width=device-width" >
+<link rel = "icon" sizes="196x196" href="DMSICon.png" >
+<style>
+body{
+	padding:0;
+	padding:0;
+	background-color:#000;
+}
+</style>
+<!--<script src="../phaser/build/phaser.min.js" ></script> -->
+<script src="./lib/phaser.min.js" ></script>
+<script src="classes/MessageBoard.js" ></script>
+<script src="classes/Hunter.js" ></script>
+<script src="classes/EnmeyCircles.js" ></script>
+<script src="classes/Neon.js" ></script>
+<script src="classes/Stars.js" ></script>
+<script src="utils/Utils.js" ></script>
+
+<script src="Boot.js" ></script>s
+<script src="Preloader.js" ></script>
+<script src="StartMenu.js" ></script>
+<script src="Game.js" ></script>
+<script src="GameOver.js" ></script>
+<script src="Interstitial.js" ></script>
+<script src="InterstitialPlay.js" ></script>
+<script src="HowToPlay.js" ></script>
+<script src="LeaderBoard.js" ></script>
+
+<title>Circle Game</title>
+</head>
+
+<body>
+  <div id="gameContainer">
+  </div>
+  <script type="text/javascript">
+	  window.onload =  function(){
+		// bind (w,h, AUTO pick the renderer Phaser.AUTO will auto-detect, Phaser.WEBGL, Phaser.CANVAS or Phaser.HEADLESS (no rendering at all).
+		var game= new Phaser.Game(540,960,Phaser.AUTO,'gameContainer' );
+		// adding states 
+		game.state.add('Boot',CircleGame.Boot);
+		game.state.add('Preloader',CircleGame.Preloader);
+		game.state.add('StartMenu',CircleGame.StartMenu);
+		game.state.add('Game',CircleGame.Game);
+		game.state.add('GameOver',CircleGame.GameOver);
+		game.state.add('Interstitial',CircleGame.Interstitial);
+		game.state.add('InterstitialPlay',CircleGame.InterstitialPlay);
+		game.state.add('HowToPlay',CircleGame.HowToPlay);
+		game.state.add('LeaderBoard',CircleGame.LeaderBoard);
+    	game.state.start('Boot');
+	  };
+  </script>
+ </body>
+</html>
